@@ -78,6 +78,14 @@ body {
     padding-right: 10px;
   }
 }
+
+/* ---------searchBox design--------- */
+.search-box{
+  background: #5f27cd;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+}
 @media only screen and (max-width: 468px) {
   #all-products {
     display: grid;
