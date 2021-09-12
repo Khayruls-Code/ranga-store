@@ -1,48 +1,104 @@
 body {
   overflow-x: hidden;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
-.search-field {
-  border: none;
+
+/* ------common button--------- */
+.commonBtn{
   border-radius: 50px;
-  padding: 5px;
-  outline: none;
-}
-.search-field:hover {
+  background: #5f27cd;
+  color: #fff;
   outline: none;
   border: none;
+  padding: 7px 10px;
 }
-.search-box {
-  border: 1px solid rgb(3, 118, 211);
-  width: 281px;
-  border-radius: 5px;
-  margin: auto;
-  margin-top: 50px;
-  border-right: none;
+.commonBtn:hover{
+  background: #7038df;
 }
-.search-button {
-  padding: 10px 50px;
-  border-radius: 25px;
-  margin-left: 20px;
+.detailsBtn {
+  background-color: #079992;
 }
-#all-products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* border: 1px solid black; */
-  text-align: center;
+.detailsBtn:hover {
+  background-color: #29cac2;
+}
+/* ---------searchBox design--------- */
+.search-field-container{
+  border: none;
+  outline: none;
   width: 100%;
-  margin: auto;
+  background: #38ada9;
+  display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.single-product {
+.search-box {
+  width: 30%;
+  border-radius: 5px;
+  margin: auto;
+  border-right: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  overflow: hidden;
+}
+.search-box input ,
+.search-box button{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.search-box input{
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding-left: 15px;
+}
+.search-box button {
+  width: 100px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: #5f27cd;
+  font-size: 17px;
+  font-weight: 500;
+}
+.search-box button:hover{
+  background: #5f1ce6;
+}
+
+
+#all-products {
+  text-align: center;
+  width: 100%;
+  max-width: 920px;
+  margin: auto;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  grid-gap: 15px;
+  display: flex;
+  justify-content: center;
+}
+.product {
   padding: 10px;
   transition: 0.6s;
-}
-.single-product:hover {
-  box-shadow: 4px 4px 7px gray;
+  background: #fff;
+  width: 30%;
   border-radius: 10px;
-  border: 1px solid cyan;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.product:hover {
+  box-shadow: 4px 4px 7px rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.product  h3{
+  font-size: 20px;
+}
+.product  h2{
+  font-size: 25px;
 }
 .product-image {
   width: 150px;
@@ -79,13 +135,7 @@ body {
   }
 }
 
-/* ---------searchBox design--------- */
-.search-box{
-  background: #5f27cd;
-  width: 100%;
-  padding: 15px 0;
-  text-align: center;
-}
+
 @media only screen and (max-width: 468px) {
   #all-products {
     display: grid;

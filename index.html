@@ -19,16 +19,16 @@
 
 <body>
   <header></header>
-  <main class="main">
-    <div class="search-field">
-      <div class="search-box">
-        <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
-          Search
-        </button>
-      </div>
+  <div class="search-field-container">
+    <div class="search-box">
+      <input id="input-field" class="search-field" type="text" placeholder="Search for Products..." />
+      <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
+        autocomplete="off" id="search-btn" onclick="loadProducts()">
+        Search
+      </button>
     </div>
+  </div>
+  <main class="main">
     <div class="row">
       <div class="col-md-9 col-lg-9 col-sm-7">
         <div id="all-products" class="">
@@ -79,7 +79,7 @@
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button class="commonBtn text-center">Buy Now</button>
           </div>
         </div>
       </div>
