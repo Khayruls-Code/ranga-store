@@ -36,7 +36,8 @@ body {
   z-index: 1000;
 }
 .search-box {
-  width: 30%;
+  width: 90%;
+  max-width: 500px;
   border-radius: 5px;
   margin: auto;
   border-right: none;
@@ -70,13 +71,12 @@ body {
   background: #5f1ce6;
 }
 
-
+/* ------all product design--------- */
 #all-products {
   text-align: center;
   width: 100%;
   max-width: 920px;
-  margin: auto;
-  margin-top: 50px;
+  margin: 50px auto;
   flex-wrap: wrap;
   grid-gap: 15px;
   display: flex;
@@ -100,13 +100,29 @@ body {
 .product  h2{
   font-size: 25px;
 }
+.rating{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+}
+.rating span{
+  margin: 0 10px;
+  color: #079992;
+  font-weight: 500;
+}
+.rating span i{
+  color: orangered;
+  margin-right: 5px;
+}
 .product-image {
   width: 150px;
   height: 150px;
 }
+
+/* ---------card design---------- */
 .cart {
   width: 350px;
-  /* border: 1px solid green; */
   padding: 10px;
   box-shadow: 10px 10px 20px gray;
   border-radius: 5px;
@@ -116,19 +132,23 @@ body {
 .cart-main {
   padding-right: 30px;
 }
+
+/* ---------responsive design----------- */
+@media only screen and (max-width: 1000px){
+  .product {
+    width: 45%;
+  }
+}
 @media only screen and (max-width: 768px) {
-  #all-products {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+  .product {
+    width: 90%;
   }
   .cart {
     width: 300px;
-    /* border: 1px solid green; */
     padding: 10px;
     box-shadow: 10px 10px 20px gray;
     border-radius: 5px;
     margin-right: 30px;
-    position: fixed;
   }
   .cart-main {
     padding-right: 10px;

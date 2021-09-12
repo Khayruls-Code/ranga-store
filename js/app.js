@@ -1,5 +1,6 @@
+//data load form api
 const loadProducts = () => {
-  const url = `https://raw.githubusercontent.com/biswajitdasme/fakestore/main/db.json?fbclid=IwAR1OrpKGMyrBsRhnQs6x8-wVPfoBKX4iYUfanJmb2Lbn0yDE7lmYOnMLuPU`
+  const url = `https://raw.githubusercontent.com/ProgrammingHero1/ranga-store-api/main/ranga-api.json?fbclid=IwAR2qhI_SSCU6B4KDcOE5tSJJ7XNDVlGcXsCDSe7fOxrJtQHD3R92is9f0Cc`
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
@@ -20,12 +21,18 @@ const showProducts = (products) => {
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
+      <div class="rating">
+        <span><i class="fas fa-star"></i>${product.rating.rate}</span>
+        <span><i class="fas fa-user"></i>${product.rating.count}</span>
+      </div>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="commonBtn">add to cart</button>
       <button id="details-btn" class="commonBtn detailsBtn">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+//cart functionality implementation
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -36,6 +43,7 @@ const addToCart = (id, price) => {
   document.getElementById("total-Products").innerText = count;
 };
 
+///getting input value
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
@@ -47,7 +55,6 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  // document.getElementById(id).innerText = Math.round(total);
   document.getElementById(id).innerText = total.toFixed(2)
 };
 
